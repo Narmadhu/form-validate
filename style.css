@@ -43,19 +43,3 @@
 .buttons .button:last-child {
   width: 250px;
 }
-
-/* form {
-  position: relative;
-}
-.invisible-input {
-  position: absolute;
-  display: none;
-}
-
-.file-heading {
-  position: absolute;
-  top: 3px;
-  left: 50px;
-  font-size: larger;
-  font-weight: 500;
-} */

@@ -4,54 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Form</title>
 </head>
-<body onload='document.form.input.focus()'>
+<body >
   <header>
       <h3>Form</h3>
   </header>
   <main>
-      <form class="form" name="form" >
+      <form class="form" name="form" onsubmit="return validateName()"  >
         <div class="input-field" >
           <span>Select your source :</span>
-          <!-- <input type="text" className="invisible-input" />
-            <input type="file" accept="image/*" className="file-input" multiple  ></input>   
-            <h5 className="file-heading">Drop your file</h5> -->
           <input type="file" name="" id="source" required  >
         </div>
         <div class="input-field" >
           <span class="pipe">Provide a name for pipeline :</span>
-          <input type="text" placeholder="e.g., energy_gateway001" id="pipeline-name" name="input" >
+          <input type="text" placeholder="e.g., energy_gateway001" id="pipeline-name" name="pipeline-name" >
+          <p id="pipe-error" class="text-danger"></p>
         </div>
         <div class="input-field" >
           <span>GCS project name :</span>
-          <input type="text" placeholder="project-id" id="project-name" name="input" >
+          <input type="text" placeholder="project-id" id="project-name"  >
+          <p id="project-error" class="text-danger"></p>
+
         </div>
         <div class="input-field" >
           <span>GCS bucket name :</span>
-          <input type="text" placeholder="gs://your bucket" id="bucket-name" name="input"  >
+          <input type="text" placeholder="gs://your bucket" id="bucket-name"   >
+          <p id="bucket-error" class="text-danger"></p>
         </div>
-        <div class="input-field" >
+         <div class="input-field" >
           <span>Input Cloud Storage File(s) :</span>
-          <input type="url" name="" id="file" placeholder="GCS location of your files" name="input" >
+          <input type="url" id="file" placeholder="GCS location of your files" >
+          <p id="file-error" class="text-danger"></p>
         </div>
         <div class="input-field" >
           <span>GCS credentials :</span>
           <div>
-          <input type="text" class="grey" id="credentials" name="input" >
+          <input type="text" class="grey" id="credentials"  >
            <small>Example: gs://your-bucket/your-files/01.csv</small>
           </div>
+          <p id="credentials-error" class="text-danger"></p>
         </div>
         <div class="input-field"  >
           <span>Run Every :</span>
           <input type="number" name="" id="time" placeholder="(in minutes)"  >
+          <p id="time-error" class="text-danger"></p>
         </div>
         <div class="buttons" >
-            <input class="button" type="submit" value="Create"  onclick="CheckPassword(document.form.input)" >
+            <input class="button" type="submit" value="Create"  >
             <input class="button" type="button" value="Cancel" >
         </div>
     </form>
   </main>
-  <script src="script.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
