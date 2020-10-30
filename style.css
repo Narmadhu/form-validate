@@ -8,9 +8,11 @@
 .input-field {
   margin-bottom: 10px;
   padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
+
 .input-field span {
-  border-right: 1px solid black;
   padding: 8px;
 }
 .input-field input {
@@ -20,13 +22,17 @@
   padding: 8px;
   width: 200px;
 }
+
+.input-field small {
+  color: gray;
+}
 .input-field .grey {
-  background-color: gray;
+  background-color: rgb(173, 173, 173);
 }
 .buttons {
   width: 100%;
 }
-.buttons button {
+.buttons .button {
   background-color: rgb(0, 130, 173);
   padding: 8px;
   border: none;
@@ -34,6 +40,22 @@
   font-weight: 700;
   width: 170px;
 }
-.buttons button:last-child {
+.buttons .button:last-child {
   width: 250px;
 }
+
+/* form {
+  position: relative;
+}
+.invisible-input {
+  position: absolute;
+  display: none;
+}
+
+.file-heading {
+  position: absolute;
+  top: 3px;
+  left: 50px;
+  font-size: larger;
+  font-weight: 500;
+} */

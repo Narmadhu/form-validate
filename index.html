@@ -6,43 +6,49 @@
     <link rel="stylesheet" href="style.css">
     <title>Form</title>
 </head>
-<body>
+<body onload='document.form.input.focus()'>
   <header>
       <h3>Form</h3>
   </header>
   <main>
-      <form class="form" >
+      <form class="form" name="form" >
         <div class="input-field" >
           <span>Select your source :</span>
-          <input type="file" name="" id=""  >
+          <!-- <input type="text" className="invisible-input" />
+            <input type="file" accept="image/*" className="file-input" multiple  ></input>   
+            <h5 className="file-heading">Drop your file</h5> -->
+          <input type="file" name="" id="source" required  >
         </div>
         <div class="input-field" >
-          <span>Provide a name for pipeline :</span>
-          <input type="text" placeholder="e.g., cust_shop_energy_gateway001" >
+          <span class="pipe">Provide a name for pipeline :</span>
+          <input type="text" placeholder="e.g., energy_gateway001" id="pipeline-name" name="input" >
         </div>
         <div class="input-field" >
           <span>GCS project name :</span>
-          <input type="text" placeholder="project-id">
+          <input type="text" placeholder="project-id" id="project-name" name="input" >
         </div>
         <div class="input-field" >
           <span>GCS bucket name :</span>
-          <input type="text" placeholder="gs://your bucket">
+          <input type="text" placeholder="gs://your bucket" id="bucket-name" name="input"  >
         </div>
         <div class="input-field" >
           <span>Input Cloud Storage File(s) :</span>
-          <input type="url" name="" id="" placeholder="GCS location of your files">
+          <input type="url" name="" id="file" placeholder="GCS location of your files" name="input" >
         </div>
         <div class="input-field" >
           <span>GCS credentials :</span>
-          <input type="text" class="grey" >
+          <div>
+          <input type="text" class="grey" id="credentials" name="input" >
+           <small>Example: gs://your-bucket/your-files/01.csv</small>
+          </div>
         </div>
-        <div class="input-field" >
+        <div class="input-field"  >
           <span>Run Every :</span>
-          <input type="text" name="" id="" placeholder="(in minutes)">
+          <input type="number" name="" id="time" placeholder="(in minutes)"  >
         </div>
         <div class="buttons" >
-            <button>Create</button>
-            <button>Cancel</button>
+            <input class="button" type="submit" value="Create"  onclick="CheckPassword(document.form.input)" >
+            <input class="button" type="button" value="Cancel" >
         </div>
     </form>
   </main>
