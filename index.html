@@ -16,7 +16,8 @@
       <form class="form" name="form" onsubmit="return validateName()"  >
         <div class="input-field" >
           <span>Select your source :</span>
-          <input type="file" name="" id="source" required  >
+          <input type="text" name="source" id="source" placeholder="Google Cloud Storage" >
+          <p id="source-error" class="text-danger"></p>
         </div>
         <div class="input-field" >
           <span class="pipe">Provide a name for pipeline :</span>
@@ -36,7 +37,7 @@
         </div>
          <div class="input-field" >
           <span>Input Cloud Storage File(s) :</span>
-          <input type="url" id="file" placeholder="GCS location of your files" >
+          <input type="text" id="file" placeholder="GCS location of your files" >
           <p id="file-error" class="text-danger"></p>
         </div>
         <div class="input-field" >
@@ -49,7 +50,7 @@
         </div>
         <div class="input-field"  >
           <span>Run Every :</span>
-          <input type="number" name="" id="time" placeholder="(in minutes)"  >
+          <input type="text" name="" id="time" placeholder="(in minutes)"  >
           <p id="time-error" class="text-danger"></p>
         </div>
         <div class="buttons" >
