@@ -6,12 +6,12 @@ var file=document.getElementById("file").value;
 var credentials=document.getElementById("credentials").value;
 var time=document.getElementById("time").value;
 
-let pipeCheck = /^[a-zA-Z]{5,50}$/
-let projectCheck = /^[a-zA-Z]{5,50}$/
-let bucketCheck = /^[a-zA-Z]{5,50}$/
-let fileCheck = /^[a-zA-Z]{5,50}$/
+let pipeCheck = /^[a-zA-Z0-9]{5,50}$/
+let projectCheck = /^[a-zA-Z0-9]{5,50}$/
+let bucketCheck = /^[a-zA-Z0-9]{5,50}$/
+let fileCheck = /^[a-zA-Z0-9]{5,50}$/
 let credentialsCheck =/^[a-zA-Z]{5,50}$/
-let timeCheck =/^[a-zA-Z]{5,50}$/
+let timeCheck =/^[1-9][0-9]*$/
 
 if (pipeCheck.test(pipe)) {
     document.getElementById("pipe-error").innerHTML=" "
